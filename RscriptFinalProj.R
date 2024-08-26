@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 install.packages("schrute")
 library(schrute)
 library(tidyverse)
@@ -10,6 +11,9 @@ getwd()
 #Question 1: Create a {gtsummary} table of descriptive statistics about
 #your data (1 pt)
 
+=======
+#Question 1:
+>>>>>>> 547be26ca619457a0a00015a89ac5960f20d5d42
 library(gtsummary)
 
 tbl_summary(
@@ -22,6 +26,7 @@ tbl_summary(
   	air_date ~ "Air Date"),
 
 	statistic = list(
+<<<<<<< HEAD
 		imdb_rating ~ "{mean} ({min}, {max})",
 		total_votes ~ "{sum}",
 		air_date ~ "({min}) to ({max})"),
@@ -69,3 +74,25 @@ tbl_uvregression(
 
 
 
+=======
+		imdb_rating ~ "{mean}, {min}, {max}",
+		total_votes ~ "{max}",
+		air_date ~ "{min}, {max}"))
+
+missing_text = "Missing"
+add_p(test = list(all_continuous() ~ "t.test",
+									all_categorical() ~ "chisq.test")) |>
+	add_overall(col_label = "**Total**") |>
+	bold_labels() |>
+	modify_footnote(update = everything() ~ NA) |>
+	modify_header(label = "**Variable**", p.value = "**P**")
+
+)
+missing_text = "Missing"
+add_p(test = list(all_continuous() ~ "t.test",
+									all_categorical() ~ "chisq.test")) |>
+	add_overall(col_label = "**Total**") |>
+	bold_labels() |>
+	modify_footnote(update = everything() ~ NA) |>
+	modify_header(label = "**Variable**", p.value = "**P**")
+>>>>>>> 547be26ca619457a0a00015a89ac5960f20d5d42
