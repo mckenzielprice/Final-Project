@@ -60,4 +60,15 @@ boxplot(imdb_rating ~ season, data = office_data,
 				ylab = "IMDB Rating",
 				outline = TRUE)
 
+#Question 4: Write and use a function that does something with the data (1 pt)
+#It could be as simple as, for example, a new function that you write by hand
+#to calculate the standard deviation of a variable (like we did with the mean)
 
+imdbstdev <- function(imdb_rating) {
+	sd_value <- sd(imdb_rating, na.rm = FALSE)
+	return(sd_value)
+}
+imdb_ratings <- office_data$imdb_rating
+imdbstdev(imdb_ratings)
+
+sd(office_data$imdb_rating)
