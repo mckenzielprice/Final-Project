@@ -71,4 +71,3 @@ imdbstdev <- function(imdb_rating) {
 imdb_ratings <- office_data$imdb_rating
 imdbstdev(imdb_ratings)
 
-sd(office_data$imdb_rating)
