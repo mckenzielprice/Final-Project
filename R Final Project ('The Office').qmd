@@ -6,6 +6,9 @@ execute:
   echo: false
   warning: false
 ---
+
+The data used for this assignment was sourced from tidytuesday, week 2020-03-17. 'The Office' transcripts are from the schrute R package (https://bradlindblad.github.io/schrute/index.html), and the IMDB ratings for each episode are from data.world (https://data.world/anujjain7/the-office-imdb-ratings-dataset). 
+
 ```{r}
 library(schrute)
 library(tidyverse)
@@ -54,7 +57,7 @@ table1
 ```
 @tbl-one is a descriptive table summarizing 'The Office' episodes by season. The table includes the average, minimum and maximum IMBD ratings, the total votes, and start to finish air dates of each season. 
 
-Although lowest number of votes was `r tot_votes1` in season 1 and the highest number of votes was `r tot_votes2` in season 2, the average IMDB rating for all seasons of 'The Office' is `r total_mean`.  
+Although the lowest number of votes was `r tot_votes1` in season 1 and the highest number of votes was `r tot_votes2` in season 2, the average IMDB rating for all seasons of 'The Office' is `r total_mean`.  
 
 ```{r}
 #| label: tbl-two
@@ -81,4 +84,5 @@ boxplot(imdb_rating ~ season, data = office_data,
 				outline = TRUE)
 ```
 
+As seen in @tbl-one and @fig-one, the average, minimum, and maximum IMDB ratings for each season of the 'The Office' throughout the 9 seasons. The season to have the highest average IMDB rating was season 4, and the season to have the lowest average IMDB rating was season 8. 
 
