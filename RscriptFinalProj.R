@@ -64,12 +64,17 @@ boxplot(imdb_rating ~ season, data = office_data,
 #It could be as simple as, for example, a new function that you write by hand
 #to calculate the standard deviation of a variable (like we did with the mean)
 
-imdbstdev <- function(imdb_rating) {
-	sd_value <- sd(imdb_rating, na.rm = FALSE)
-	return(sd_value)
-}
 imdb_ratings <- office_data$imdb_rating
-imdbstdev(imdb_ratings)
+
+imdb_mean <- function(imdb_ratings) {
+	n <- length(imdb_ratings)
+	mean_val <- sum(imdb_ratings) / n
+	return(mean_val)
+}
+
+imdb_mean(imdb_ratings)
+
+
 
 #Question 5: Create and render a quarto document that includes at least:
 #The table, regression results, and figure, with appropriate captions (1 pt)
