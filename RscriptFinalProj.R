@@ -71,3 +71,18 @@ imdbstdev <- function(imdb_rating) {
 imdb_ratings <- office_data$imdb_rating
 imdbstdev(imdb_ratings)
 
+#Question 5: Create and render a quarto document that includes at least:
+#The table, regression results, and figure, with appropriate captions (1 pt)
+#Inline R code in at least 2 places, 1 pulling a statistic from a table
+#(i.e., using gtsummary::inline_text()) and 1 printing something else
+#(like we did with the mean age in the example) (1 pt)
+#Cross-references to a table and a figure at least once each (1 pt)
+#A brief description of the data, including its source (1 pt)
+
+
+
+
+
+
+
+
