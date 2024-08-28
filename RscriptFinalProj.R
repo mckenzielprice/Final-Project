@@ -1,11 +1,14 @@
 install.packages("schrute")
 library(schrute)
 library(tidyverse)
+library(here)
+
+office_ratings <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-17/office_ratings.csv')
 
 # save the complete-case data
-saveRDS(office_ratings, "/Users/mckenzieprice/Desktop/EPI590R R Bootcamp/Final
-				Project/office_data.rds")
-getwd()
+saveRDS(office_ratings, here::here("office_data.rds"))
+
+office_data <- readRDS(here::here("office_data.rds"))
 
 #Question 1: Create a {gtsummary} table of descriptive statistics about
 #your data (1 pt)
@@ -73,8 +76,6 @@ imdb_mean <- function(imdb_ratings) {
 }
 
 imdb_mean(imdb_ratings)
-
-
 
 #Question 5: Create and render a quarto document that includes at least:
 #The table, regression results, and figure, with appropriate captions (1 pt)
