@@ -23,7 +23,7 @@ office_data <- readRDS(here::here("office_data.rds"))
 ```{r}
 #| label: tbl-one
 #| tbl-cap: "**Summary of ‘The Office’ Episodes by Season**"
-tbl_summary(
+table1 <- tbl_summary(
 	office_data,
 	by = season,
 	include = c(imdb_rating, total_votes, air_date),
@@ -48,15 +48,17 @@ imdb_mean <- function(imdb_ratings) {
 }
 
 total_mean <- imdb_mean(imdb_ratings)
+tot_votes1 <- inline_text(table1, variable = "total_votes", column = "1")
+tot_votes2 <- inline_text(table1, variable = "total_votes", column = "2")
+table1
 ```
 @tbl-one is a descriptive table summarizing 'The Office' episodes by season. The table includes the average, minimum and maximum IMBD ratings, the total votes, and start to finish air dates of each season. 
 
-The average IMDB rating for all seasons of 'The Office' is `r total_mean`. 
-inline_text(table1, variable = "total_votes", column = "stat_0")
+Although lowest number of votes was `r tot_votes1` in season 1 and the highest number of votes was `r tot_votes2` in season 2, the average IMDB rating for all seasons of 'The Office' is `r total_mean`.  
 
 ```{r}
 #| label: tbl-two
-#| tbl-cap: "**Poisson Regression Analysis**"
+#| tbl-cap: "**'The Office' Poisson Regression Analysis**"
 poisson_model <- glm(total_votes ~ imdb_rating + season,
 										 family = poisson,
 										 data = office_data)
@@ -68,10 +70,10 @@ tbl_regression(
 		season ~ "Season"
 	)) 
 ```
-
+@tbl-two shows the results of conducting a poisson regression analysis of the total votes on IMDB ratings and seasons. 
 ```{r}
 #| label: fig-one
-#| fig-cap: "A box plot showing the "
+#| fig-cap: "A box plot showing the distributions of IMDB ratings throughout the 9 seasons of 'The Office'."
 boxplot(imdb_rating ~ season, data = office_data,
 				main = "Box Plot Comparing 'The Office' IMDB Ratings by Season",
 				xlab = "Season",
