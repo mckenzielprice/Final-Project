@@ -1,4 +1,5 @@
-install.packages("schrute")
+install.packages("renv")
+install.packages(schrute)
 library(schrute)
 library(tidyverse)
 library(here)
@@ -85,7 +86,13 @@ imdb_mean(imdb_ratings)
 #Cross-references to a table and a figure at least once each (1 pt)
 #A brief description of the data, including its source (1 pt)
 
+#Use the {renv} package to make sure the teaching team can reproduce your
+#results with the same package versions (1 pt) You don’t need to include any
+#{renv} code, we can see that you have used it because of the renv.lock file
+#you will include. Remember if you are having trouble with {renv} to deactivate
+#it, and then only initiate it when you have installed all the packages you will need
 
+install.packages("renv")
 
 
 
