@@ -3,6 +3,7 @@ install.packages(schrute)
 library(schrute)
 library(tidyverse)
 library(here)
+library(broom.helpers)
 
 office_ratings <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-03-17/office_ratings.csv')
 
@@ -92,7 +93,6 @@ imdb_mean(imdb_ratings)
 #you will include. Remember if you are having trouble with {renv} to deactivate
 #it, and then only initiate it when you have installed all the packages you will need
 
-install.packages("renv")
 
 
 
